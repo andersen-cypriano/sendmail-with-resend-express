@@ -7,7 +7,7 @@ app.use(express.json())
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.get("/", async (req, res) => {
+app.get("/orcamento", async (req, res) => {
 
   try {
     const data = await resend.emails.send({
