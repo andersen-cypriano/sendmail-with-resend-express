@@ -7,7 +7,7 @@ app.use(express.json())
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-app.get("/orcamento", async (req, res) => {
+app.get("/", async (req, res) => {
 
   try {
     const data = await resend.emails.send({
@@ -25,3 +25,5 @@ app.get("/orcamento", async (req, res) => {
 app.listen(3000, () => {
   console.log("Listening on http://localhost:3000");
 });
+
+module.exports = app;
